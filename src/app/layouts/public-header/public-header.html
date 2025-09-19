@@ -1,0 +1,25 @@
+<div
+  class="flex items-center justify-between bg-white shadow h-18 md:h-24 p-4 md:px-8 md:py-6"
+>
+  <div>
+    <app-logo-button></app-logo-button>
+  </div>
+  <div class="flex items-center gap-6">
+    <div class=" flex items-center justify-center gap-4 ">
+      <app-button
+        class="hidden lg:block"
+        textColor="text-[#29B48B]"
+        bgColor="bg-transparent"
+        borderColor="border border-[#29B48B]"
+        label="Pharmacy Portal"
+      ></app-button>
+      <app-button
+        class="hidden md:block"
+        [svgIconContent]="svgIconContent"
+        label="Patient Login"
+      ></app-button>
+    </div>
+
+    <app-hamburger-button></app-hamburger-button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<button
+  type="button"
+  class="flex items-center justify-center transition-all duration-200 font-poppins font-normal text-sm leading-[1.225rem] tracking-normal text-center
+          {{ bgColor() }} {{ textColor() }} {{ hoverBgColor() }} {{
+    activeBgColor()
+  }}
+         {{ rounded() }} {{ padding() }} {{ gap() }} {{ height() }} {{ borderColor() }}"
+>
+  <!-- Optional SVG -->
+  @if(svgIcon) {
+  <span [innerHTML]="svgIcon"></span>
+  }
+
+  <!-- Optional Label -->
+  @if(label()) {
+  <span>{{ label() }}</span>
+  }
+</button>
