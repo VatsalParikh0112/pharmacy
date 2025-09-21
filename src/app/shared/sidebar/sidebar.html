@@ -1,0 +1,62 @@
+<div class="bg-transparent h-full w-full">
+  <app-navigate-button
+    label="{{ button1() }}"
+    route="{{ route1() }}"
+    styleType="bg"
+    (click)="closeSidebar()"
+  ></app-navigate-button>
+
+  @if(showButton2()) {
+    <app-navigate-button
+      label="{{ button2() }}"
+      route="{{ route2() }}"
+      styleType="bg"
+      (click)="closeSidebar()"
+    ></app-navigate-button>
+  }
+
+  @if(showButton3()) {
+    <app-navigate-button
+      label="{{ button3() }}"
+      route="{{ route3() }}"
+      styleType="bg"
+      (click)="closeSidebar()"
+    ></app-navigate-button>
+  }
+
+  @if(showButton4()) {
+    <app-navigate-button
+      label="{{ button4() }}"
+      route="{{ route4() }}"
+      styleType="bg"
+      (click)="closeSidebar()"
+    ></app-navigate-button>
+  }
+
+  @if(showButton5()) {
+    <app-navigate-button
+      label="{{ button5() }}"
+      route="{{ route5() }}"
+      styleType="bg"
+      (click)="closeSidebar()"
+    ></app-navigate-button>
+  }
+
+  @if(showButton6()) {
+    <app-navigate-button
+      label="{{ button6() }}"
+      route="{{ route6() }}"
+      styleType="bg"
+      (click)="closeSidebar()"
+    ></app-navigate-button>
+  }
+
+  @if(showButton7()) {
+    <app-navigate-button
+      label="{{ button7() }}"
+      route="{{ route7() }}"
+      styleType="bg"
+      (click)="closeSidebar()"
+    ></app-navigate-button>
+  }
+</div>

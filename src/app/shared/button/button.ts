@@ -15,6 +15,7 @@ export class Button {
   // Tailwind classes
   bgColor = input<string>('bg-[#29B48B]');
   textColor = input<string>('text-white');
+  hoverTextColor = input<string>('hover:text-white')
   borderColor = input<string>('border border-[#27A37D]');
   hoverBgColor = input<string>('hover:bg-[#27A37D]');
   activeBgColor = input<string>('active:bg-[#23876A]');
@@ -22,7 +23,6 @@ export class Button {
   padding = input<string>('px-4 py-3');
   gap = input<string>('gap-2.5');
   height = input<string>('h-12');
-
 
   // Label
   label = input<string>('Button');

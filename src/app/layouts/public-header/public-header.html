@@ -1,25 +1,42 @@
 <div
-  class="flex items-center justify-between bg-white shadow h-18 md:h-24 p-4 md:px-8 md:py-6"
+  class="flex items-center justify-between bg-white shadow h-18 md:h-20 lg:h-22 p-4 md:px-8 md:py-6"
 >
-  <div>
-    <app-logo-button></app-logo-button>
-  </div>
-  <div class="flex items-center gap-6">
-    <div class=" flex items-center justify-center gap-4 ">
-      <app-button
-        class="hidden lg:block"
-        textColor="text-[#29B48B]"
-        bgColor="bg-transparent"
-        borderColor="border border-[#29B48B]"
-        label="Pharmacy Portal"
-      ></app-button>
-      <app-button
-        class="hidden md:block"
-        [svgIconContent]="svgIconContent"
-        label="Patient Login"
-      ></app-button>
-    </div>
+  <app-logo-button></app-logo-button>
 
-    <app-hamburger-button></app-hamburger-button>
+  <div class="flex items-center justify-between w-3/5 2xl:w-1/2 gap-20">
+    <app-navigation class="flex-1 max-w-full "
+      button1="Home"
+      button2="About Us"
+      button3="Contact Us"
+      button4="Follow Us"
+      route1="/"
+      route2="/about"
+      route3="/contact"
+      route4="/follow"
+    ></app-navigation>
+
+    <!-- this div -->
+    <div class="flex items-center gap-6 ">
+      <div class="flex items-center justify-center gap-4">
+        <app-button
+          class="hidden lg:block hover:text-white"
+          textColor="text-[#29B48B]"
+          bgColor="bg-transparent"
+          borderColor="border border-[#29B48B]"
+          hoverBgColor="hover:bg-[#27A37D]"
+          label="Pharmacy Portal"
+        ></app-button>
+        <app-button
+          class="hidden md:block"
+          [svgIconContent]="svgIconContent"
+          label="Patient Login"
+        ></app-button>
+      </div>
+
+      <app-hamburger-button
+        class="xl:hidden"
+        (click)="onMenuToggle()"
+      ></app-hamburger-button>
+    </div>
   </div>
 </div>

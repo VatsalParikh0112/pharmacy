@@ -1,7 +1,37 @@
-<app-public-header></app-public-header>
+@if(!hideHeader()) {
+<header class="sticky top-0 z-50 transition-transform duration-300">
+  <app-public-header></app-public-header>
+</header>
+} 
 
-<main class="p-4">
+@if (isSidebarOpen()) {
+<div
+  class="fixed inset-0 bg-black/10 backdrop-blur-sm z-30"
+  (click)="closeSidebar()"
+></div>
+}
+
+<app-sidebar
+  [ngClass]="{
+    'translate-x-0': isSidebarOpen(),
+    'translate-x-full': !isSidebarOpen()
+  }"
+  class="fixed top-18 md:top-20 lg:top-22 right-0 h-full w-52 md:w-56 lg:w-60 xl:w-64 bg-white shadow-lg transition-transform duration-300 ease-in-out z-40"
+  button1="Home"
+  button2="About Us"
+  button3="Contact Us"
+  button4="Follow Us"
+  route1="/"
+  route2="/about"
+  route3="/contact"
+  route4="/follow"
+  (sidebarClose)="closeSidebar()"
+></app-sidebar>
+
+<main class="relative z-20 overflow-auto">
   <router-outlet></router-outlet>
 </main>
 
-<app-public-footer></app-public-footer>
+<footer class="relative z-20 overflow-auto">
+  <app-public-footer></app-public-footer>
+</footer>

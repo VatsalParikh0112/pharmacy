@@ -1,0 +1,14 @@
+<button
+  [routerLink]="route()"
+  class="p-2.5 font-medium font-inter leading-normal text-base transition w-full text-left"
+  [ngClass]="{
+    'border-b-2 text-[#26B58A] border-[#26B58A]':
+      styleType() === 'underline' && isActive(),
+    'hover:border-b-2 hover:border-[#26B58A] hover:text-[#26B58A]':
+      styleType() === 'underline' && !isActive(),
+    'bg-[#29B48B] text-white': styleType() === 'bg' && isActive(),
+    'hover:bg-[#27A37D] hover:text-white': styleType() === 'bg' && !isActive()
+  }"
+>
+  {{ label() }}
+</button>

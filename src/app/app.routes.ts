@@ -25,6 +25,9 @@ import { RejectedRequest } from './pages/pharmacy/rejected-request/rejected-requ
 import { History as PharmacyHistory } from './pages/pharmacy/history/history';
 import { GeneralInquiries } from './pages/pharmacy/general-inquiries/general-inquiries';
 
+// Page Not Found
+import { PageNotFound } from './pages/page-not-found/page-not-found';
+
 export const routes: Routes = [
   {
     path: '',
@@ -58,4 +61,7 @@ export const routes: Routes = [
       { path: 'general-inquiries', component: GeneralInquiries },
     ],
   },
+  {
+    path: '**', component:PageNotFound
+  }
 ];
