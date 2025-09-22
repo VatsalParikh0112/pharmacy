@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -10,7 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./button.css'],
 })
 export class Button {
-  constructor(private sanitizer: DomSanitizer) {}
+  private sanitizer= inject(DomSanitizer)
 
   // Tailwind classes
   bgColor = input<string>('bg-[#29B48B]');
