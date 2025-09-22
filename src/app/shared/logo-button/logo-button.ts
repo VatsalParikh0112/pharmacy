@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +8,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './logo-button.html',
   styleUrls: ['./logo-button.css'],
 })
-export class LogoButton {}
+export class LogoButton {
+  position = input<string>('items-center')
+  colorClass = input<string>('text-[#29B48B]');
+  block = input<string>('block')
+}
