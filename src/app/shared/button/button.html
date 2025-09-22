@@ -6,12 +6,10 @@
   }}
          {{ rounded() }} {{ padding() }} {{ gap() }} {{ height() }} {{ borderColor() }} {{hoverTextColor()}} "
 >
-  <!-- Optional SVG -->
   @if(svgIcon) {
   <span [innerHTML]="svgIcon"></span>
   }
 
-  <!-- Optional Label -->
   @if(label()) {
   <span>{{ label() }}</span>
   }
