@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-9 md:gap-12 py-8 md:py-11 lg:py-13">
   <!-- text -->
   <div
-    class="font-inter clear-start flex flex-col gap-2 md:w-160 lg:w-160 xl:w-170 px-4 md:px-8 lg:px-20"
+    class="font-inter flex flex-col gap-2 md:w-160 lg:w-160 xl:w-170 px-4 md:px-8 lg:px-20"
   >
     <div class="text-[#249C79] text-sm leading-6">Process</div>
     <div
@@ -16,7 +16,18 @@
   </div>
 
   <!-- boxes -->
-  <div>
-    <app-steps></app-steps>
+  <div class=" font-inter flex flex-col gap-9 md:gap-12 px-4 md:px-8 lg:px-20 ">
+    <app-steps
+      step="Step 1: Enter Your Medicine Name And Zip Code"
+      stepDetails="Provide the name of your medicine and zip code"
+    ></app-steps>
+    <app-steps
+      step="Step 2: Select Your Preferred Dose"
+      stepDetails="Choose the dosage that suits your needs."
+    ></app-steps>
+    <app-steps
+      step="Step 3: Get Matched with Pharmacies"
+      stepDetails="Receive a list of pharmacies with stock."
+    ></app-steps>
   </div>
 </div>
