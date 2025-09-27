@@ -1,17 +1,17 @@
 <div
-  class="bg-white font-inter flex h-full flex-col lg:flex-row lg:items-center border shadow-xl rounded py-3 px-5 md:p-5 gap-3 md:gap-5"
+  class="bg-white font-inter flex h-full {{flex()}} shadow-xl rounded py-3 px-5 md:p-5 gap-3 md:gap-5 {{width()}}"
 >
   <!-- SVG -->
   <span class=" bg-[#29B48B26] bg-opacity-15 rounded-lg p-2.5 w-min " [innerHTML]="svgIcon"></span>
 
   <div class="flex flex-col gap-3 md:gap-5 w-auto">
     <!-- Title -->
-    <div class="font-medium text-base leading-5 md:text-xl md:leading-7">
+    <div class="font-medium text-base leading-5 md:text-xl md:leading-7 {{text()}}">
       {{ title() }}
     </div>
 
     <!-- para -->
-    <div class="text-xs opacity-80 leading-4 md:text-base md:leading-6">
+    <div class="text-xs opacity-80 leading-4 md:text-base md:leading-6 {{text()}}">
       {{ para() }}
     </div>
   </div>

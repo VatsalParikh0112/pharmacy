@@ -1,0 +1,45 @@
+<div
+  class="w-full max-w-[720px] shadow rounded-lg flex flex-col items-start gap-5 md:gap-6 py-6 px-5"
+>
+  <div class="font-inter font-semibold text-xl md:text-2xl lg:text-3xl">
+    Send us a message
+  </div>
+
+  <div class="w-full flex flex-col gap-3 md:gap-6 p-2.5">
+    <div class="flex flex-col gap-2.5">
+      <label class="text-base md:text-xl">Enter your name</label>
+      <input
+        type="text"
+        class="border border-gray-300 rounded p-2 text-sm md:text-base"
+      />
+    </div>
+    <div class="flex flex-col gap-2.5">
+      <label class="text-base md:text-xl">Enter your email</label>
+      <input
+        type="text"
+        class="border border-gray-300 rounded p-2 text-sm md:text-base"
+      />
+    </div>
+    <div class="flex flex-col gap-2.5">
+      <label class="text-base md:text-xl">Enter topic</label>
+      <input
+        type="text"
+        class="border border-gray-300 rounded p-2 text-sm md:text-base"
+      />
+    </div>
+    <div class="flex flex-col gap-2.5">
+      <label class="text-base md:text-xl">Type you message...</label>
+      <textarea
+        class="border border-gray-300 rounded p-2 text-sm md:text-base"
+        id="message"
+        name="message"
+        rows="5"
+        cols="40"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class=" flex w-full justify-center ">
+    <app-button class="w-full max-w-112" label="Send Message"></app-button>
+  </div>
+</div>

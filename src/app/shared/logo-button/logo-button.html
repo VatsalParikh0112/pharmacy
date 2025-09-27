@@ -1,6 +1,7 @@
 <button
+  routerLink="/"
   type="button"
-  class="flex {{ position() }} justify-center bg-transparent py-1 gap-2"
+  class="flex {{ position() }} justify-center bg-transparent py-1 gap-2 cursor-pointer"
   [ngClass]="colorClass()"
 >
   <!-- SVG inherits text color via fill-current -->
@@ -25,7 +26,9 @@
 
   <!-- Text inherits color via text-current -->
   <span
-    class="{{ block() }} md:block font-inter font-bold text-base md:text-xl lg:text-2xl leading-6 text-current "
+    class="{{
+      block()
+    }} md:block font-inter font-bold text-base md:text-xl lg:text-2xl leading-6 text-current "
   >
     FindMy Pharmacy
   </span>

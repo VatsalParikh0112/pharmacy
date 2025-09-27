@@ -1,16 +1,16 @@
 <button
   type="button"
-  class="flex items-center justify-center transition-all duration-200 font-poppins font-normal text-sm leading-[1.225rem] tracking-normal text-center
+  class="cursor-pointer flex items-center justify-center transition-all duration-200 font-poppins font-normal text-sm leading-[1.225rem] tracking-normal text-center w-full
           {{ bgColor() }} {{ textColor() }} {{ hoverBgColor() }} {{
     activeBgColor()
   }}
-         {{ rounded() }} {{ padding() }} {{ gap() }} {{ height() }} {{ borderColor() }} {{hoverTextColor()}} "
+         {{ rounded() }} {{ padding() }} {{ gap() }} {{ height() }} {{
+    borderColor()
+  }} {{ hoverTextColor() }} "
 >
   @if(svgIcon) {
   <span [innerHTML]="svgIcon"></span>
-  }
-
-  @if(label()) {
+  } @if(label()) {
   <span>{{ label() }}</span>
   }
 </button>

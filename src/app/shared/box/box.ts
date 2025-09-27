@@ -12,6 +12,9 @@ export class Box {
 
   title = input<string>('Title');
   para = input<string>('para');
+  text = input<string>('text-start');
+  width = input<string>('w-full')
+  flex = input<string>('flex-col items-start lg:flex-row lg:items-center')
   svgIconContent = input<string | undefined>(undefined);
 
   get svgIcon(): SafeHtml | undefined {

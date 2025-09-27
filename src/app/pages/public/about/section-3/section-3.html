@@ -1,1 +1,57 @@
-<p>section-3 works!</p>
+<!-- box 1 -->
+<div
+  class="bg-[#F4F4F4] flex flex-col px-4 md:px-6 lg:px-20 py-8 md:py-12 gap-4 md:gap-8"
+>
+  <div class="flex flex-col gap-2 items-center font-inter">
+    <div class="font-bold text-lg md:text-3xl md:leading-8 lg:">
+      What we offer
+    </div>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-4 md:gap-7 lg:justify-between">
+    <app-box
+      [svgIconContent]="box1svg1"
+      title=" Real-Time Pharmacy Locator "
+      para="Find open pharmacies near you, complete with maps, contact info, and opening hours."
+    ></app-box>
+    <app-box
+      [svgIconContent]="box1svg2"
+      title=" Verified Pharmacist Portal "
+      para="A secure access point exclusively for licensed pharmacists to manage profiles, inventory, and health updates."
+    ></app-box>
+    <app-box
+      [svgIconContent]="box1svg3"
+      title=" Smart Search & Filter "
+      para="Easily filter pharmacies by services offered, languages spoken, 24/7 availability, and more."
+    ></app-box>
+  </div>
+</div>
+
+<!-- box 2 -->
+<div
+  class="bg-[#F4F4F4] flex flex-col px-4 md:px-6 lg:px-20 py-8 md:py-12 gap-4 md:gap-8"
+>
+  <div class="flex flex-col gap-2 items-center font-inter">
+    <div class="font-bold text-lg md:text-3xl md:leading-8 lg:">
+        Why choose Us
+    </div>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-4 md:gap-7 lg:justify-between">
+    <app-box
+      [svgIconContent]="box2svg1"
+      title=" Accurate & Updated Listings"
+      para="We ensure all information is verified and current, so you never waste time."
+    ></app-box>
+    <app-box
+      [svgIconContent]="box2svg2"
+      title="Secure & Private"
+      para="We prioritize your data security and privacy, always."
+    ></app-box>
+    <app-box
+      [svgIconContent]="box2svg3"
+      title="Community First"
+      para="We’re committed to making healthcare more accessible, especially in underserved areas."
+    ></app-box>
+  </div>
+</div>
