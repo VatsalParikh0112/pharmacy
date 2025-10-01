@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { Button } from '../../shared/button/button';
 import { LogoButton } from '../../shared/logo-button/logo-button';
 import { HamburgerButton } from '../../shared/hamburger-button/hamburger-button';
-import { Login } from '../../shared/login/login';
 import { ToggleService } from '../../services/toggle-service';
 import { Navigation } from '../../shared/navigation/navigation';
+
 
 @Component({
   selector: 'app-public-header',
@@ -28,11 +28,6 @@ export class PublicHeader {
   private toggleService = inject(ToggleService);
   path = input<string>('');
 
-  openForm() {
-    const dialogRef = this.dialog.open(Login, {
-      data: { title: 'Please Fill the Form' },
-    });
-  }
 
   navigate(path: string) {
     this.router.navigate([path]);

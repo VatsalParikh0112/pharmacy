@@ -2,9 +2,7 @@
 <header class="sticky top-0 z-50 transition-transform duration-300">
   <app-public-header></app-public-header>
 </header>
-} 
-
-@if (isSidebarOpen()) {
+} @if (isSidebarOpen()) {
 <div
   class="fixed inset-0 bg-black/10 backdrop-blur-sm z-30"
   (click)="closeSidebar()"

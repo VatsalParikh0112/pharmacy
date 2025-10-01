@@ -1,5 +1,7 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, input, output, signal, inject } from '@angular/core';
 import { NavigateButton } from '../navigate-button/navigate-button';
+import { Overlay } from '@angular/cdk/overlay';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,6 +10,9 @@ import { NavigateButton } from '../navigate-button/navigate-button';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
+  private overlay = inject(Overlay);
+  private router = inject(Router);
+
   button1 = input<string>('button');
   route1 = input<string>('/xyz');
 
@@ -22,9 +27,11 @@ export class Sidebar {
 
   button5 = input<string>('');
   route5 = input<string>('');
+  openDialog5 = input<boolean>(false);
 
   button6 = input<string>('');
   route6 = input<string>('');
+  openDialog6 = input<boolean>(false);
 
   button7 = input<string>('');
   route7 = input<string>('');
@@ -41,4 +48,5 @@ export class Sidebar {
   showButton5 = signal(!!this.button5);
   showButton6 = signal(!!this.button6);
   showButton7 = signal(!!this.button7);
+
 }
