@@ -6,3 +6,29 @@
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
+
+.login-backdrop {
+  @apply bg-black/10 backdrop-blur-sm;
+}
+
+/* Base: Small screens */
+.login-dialog-panel {
+  width: 100% !important;
+  max-width: calc(100% - 32px) !important; /* 16px margin on each side */
+  margin: 0 auto !important;
+  border-radius: 1rem !important; /* keep nice rounded corners */
+}
+
+/* Medium screens (≥768px) → w-160 (640px) */
+@media (min-width: 768px) {
+  .login-dialog-panel {
+    width: 640px !important;
+  }
+}
+
+/* Large screens (≥1024px) → w-208 (832px) */
+@media (min-width: 1152px) {
+  .login-dialog-panel {
+    width: 832px !important;
+  }
+}

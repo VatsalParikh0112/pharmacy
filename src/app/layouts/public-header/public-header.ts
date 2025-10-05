@@ -6,7 +6,7 @@ import { LogoButton } from '../../shared/logo-button/logo-button';
 import { HamburgerButton } from '../../shared/hamburger-button/hamburger-button';
 import { ToggleService } from '../../services/toggle-service';
 import { Navigation } from '../../shared/navigation/navigation';
-
+import { LoginDialog } from '../../shared/login-dialog/login-dialog';
 
 @Component({
   selector: 'app-public-header',
@@ -28,12 +28,30 @@ export class PublicHeader {
   private toggleService = inject(ToggleService);
   path = input<string>('');
 
-
   navigate(path: string) {
     this.router.navigate([path]);
   }
 
   onMenuToggle() {
     this.toggleService.toggleSidebar();
+  }
+
+  openLogin(role: 'pharmacy' | 'patient') {
+    const dialogRef = this.dialog.open(LoginDialog, {
+      width: '100%', // default small screens
+      hasBackdrop: true,
+      backdropClass: 'login-backdrop',
+      autoFocus: true,
+      panelClass: 'login-dialog-panel',
+    });
+
+    // ✅ Only assign role if componentInstance exists
+    if (dialogRef.componentInstance) {
+      dialogRef.componentInstance.role = role;
+    }
+
+    dialogRef.closed.subscribe(() => {
+      console.log('Login dialog closed');
+    });
   }
 }

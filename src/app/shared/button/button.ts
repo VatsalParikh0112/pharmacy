@@ -10,7 +10,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./button.css'],
 })
 export class Button {
-  private sanitizer= inject(DomSanitizer)
+  private sanitizer= inject(DomSanitizer);
+  
+  type = input<string>('button');
 
   // Tailwind classes
   bgColor = input<string>('bg-[#29B48B]');

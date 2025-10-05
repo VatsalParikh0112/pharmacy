@@ -1,67 +1,123 @@
 import { Routes } from '@angular/router';
-
 // Layouts
 import { PublicLayout } from './layouts/public-layout/public-layout';
 import { PatientLayout } from './layouts/patient-layout/patient-layout';
 import { PharmacyLayout } from './layouts/pharmacy-layout/pharmacy-layout';
 
-// Public pages
-import { Home } from './pages/public/home/home';
-import { About } from './pages/public/about/about';
-import { Contact } from './pages/public/contact/contact';
-import { Follow } from './pages/public/follow/follow';
-
-// Patient pages
-import { CurrentRequest as PatientCurrentRequest } from './pages/patient/current-request/current-request';
-import { PersonalInfo } from './pages/patient/personal-info/personal-info';
-import { InsuranceInfo } from './pages/patient/insurance-info/insurance-info';
-import { History as PatientHistory } from './pages/patient/history/history';
-
-// Pharmacy pages
-import { Dashboard } from './pages/pharmacy/dashboard/dashboard';
-import { CurrentRequest as PharmacyCurrentRequest } from './pages/pharmacy/current-request/current-request';
-import { NewRequest } from './pages/pharmacy/new-request/new-request';
-import { RejectedRequest } from './pages/pharmacy/rejected-request/rejected-request';
-import { History as PharmacyHistory } from './pages/pharmacy/history/history';
-import { GeneralInquiries } from './pages/pharmacy/general-inquiries/general-inquiries';
-
 // Page Not Found
 import { PageNotFound } from './pages/page-not-found/page-not-found';
 
 export const routes: Routes = [
+  // Public routes
   {
     path: '',
     component: PublicLayout,
     children: [
-      { path: '', component: Home },
-      { path: 'about', component: About },
-      { path: 'contact', component: Contact },
-      { path: 'follow', component: Follow },
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/public/home/home').then((m) => m.Home),
+      },
+      {
+        path: 'about',
+        loadComponent: () =>
+          import('./pages/public/about/about').then((m) => m.About),
+      },
+      {
+        path: 'contact',
+        loadComponent: () =>
+          import('./pages/public/contact/contact').then((m) => m.Contact),
+      },
+      {
+        path: 'follow',
+        loadComponent: () =>
+          import('./pages/public/follow/follow').then((m) => m.Follow),
+      },
     ],
   },
+
+  // Patient routes
   {
     path: 'patient',
     component: PatientLayout,
     children: [
-      { path: '', component: PatientCurrentRequest },
-      { path: 'personal-info', component: PersonalInfo },
-      { path: 'insurance-info', component: InsuranceInfo },
-      { path: 'history', component: PatientHistory },
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/patient/current-request/current-request').then(
+            (m) => m.CurrentRequest
+          ),
+      },
+      {
+        path: 'personal-info',
+        loadComponent: () =>
+          import('./pages/patient/personal-info/personal-info').then(
+            (m) => m.PersonalInfo
+          ),
+      },
+      {
+        path: 'insurance-info',
+        loadComponent: () =>
+          import('./pages/patient/insurance-info/insurance-info').then(
+            (m) => m.InsuranceInfo
+          ),
+      },
+      {
+        path: 'history',
+        loadComponent: () =>
+          import('./pages/patient/history/history').then((m) => m.History),
+      },
     ],
   },
+
+  // Pharmacy routes
   {
     path: 'pharmacy',
     component: PharmacyLayout,
     children: [
-      { path: '', component: Dashboard },
-      { path: 'current-request', component: PharmacyCurrentRequest },
-      { path: 'new-request', component: NewRequest },
-      { path: 'rejected-request', component: RejectedRequest },
-      { path: 'history', component: PharmacyHistory },
-      { path: 'general-inquiries', component: GeneralInquiries },
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/pharmacy/dashboard/dashboard').then(
+            (m) => m.Dashboard
+          ),
+      },
+      {
+        path: 'current-request',
+        loadComponent: () =>
+          import('./pages/pharmacy/current-request/current-request').then(
+            (m) => m.CurrentRequest
+          ),
+      },
+      {
+        path: 'new-request',
+        loadComponent: () =>
+          import('./pages/pharmacy/new-request/new-request').then(
+            (m) => m.NewRequest
+          ),
+      },
+      {
+        path: 'rejected-request',
+        loadComponent: () =>
+          import('./pages/pharmacy/rejected-request/rejected-request').then(
+            (m) => m.RejectedRequest
+          ),
+      },
+      {
+        path: 'history',
+        loadComponent: () =>
+          import('./pages/pharmacy/history/history').then((m) => m.History),
+      },
+      {
+        path: 'general-inquiries',
+        loadComponent: () =>
+          import('./pages/pharmacy/general-inquiries/general-inquiries').then(
+            (m) => m.GeneralInquiries
+          ),
+      },
     ],
   },
-  {
-    path: '**', component:PageNotFound
-  }
+
+  // Fallback route
+  { path: '**', component: PageNotFound },
 ];

@@ -26,11 +26,13 @@
           borderColor="border border-[#29B48B]"
           hoverBgColor="hover:bg-[#27A37D]"
           label="Pharmacy Portal"
+          (click)="openLogin('pharmacy')"
         ></app-button>
         <app-button
           class="hidden md:block"
           [svgIconContent]="svgIconContent"
           label="Patient Login"
+          (click)="openLogin('patient')"
         ></app-button>
       </div>
 

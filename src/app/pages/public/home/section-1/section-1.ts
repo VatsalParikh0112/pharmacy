@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Button } from '../../../../shared/button/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-section-1',
-  imports: [Button],
+  imports: [Button, RouterLink],
   templateUrl: './section-1.html',
   styleUrl: './section-1.css',
 })
